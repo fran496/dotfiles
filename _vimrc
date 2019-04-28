@@ -1,9 +1,10 @@
 set backupdir=~/vimtmp,. " Fija directorio vimtmp (o el de trabajo) como el directorio en el que se almacenaran los archivos de extensión ~ (llamados archivos de respaldo, contienen el archivo que se edito en VIM en el estado en el que se encontraba antes de la edición).
 set directory=~/vimtmp,. " Fija directorio vimtmp (o el de trabajo) como el directorio en el que se almacenaran los archivos de extension swp (llamados archivos de intercambio, contiene información del historial de cambios que se han hecho en el archivo).
 set writebackup " Activa la creción de archivos de respaldo y swap
-syntax enable " Activa el procesamiento de sintaxis
-colors dank-neon " Esquema de colores del editor
+syntax on " Activa el procesamiento de sintaxis
+color base16-default-dark "Esquema de colores del editor
 set tabstop=2 " Determina el número de espacios visibles por tabulación (cuando VIM lee un archivo con tabulaciones).
+set shiftwidth=2 " Número de espacios incluidos al hacer enter
 set softtabstop=2 " Determina el número de espacios insertados al tabular durante la edición.
 set showcmd " Muestra el ultimo comando realizado
 set expandtab " Convierte tabulacion en espacios
@@ -17,5 +18,7 @@ set incsearch " Permite buscar a medida que se insertan caracteres en la busqued
 set hlsearch " Resalta las coincidencias encontradas tras una busqueda
 set guioptions -=T "Esconder la barra de herramientas
 set guioptions -=m "Esconder barra de menú
-set guifont=Consolas:h12 "Fijar fuente para el editor
+set guifont=DejaVu_Sans_Mono:h12 " Fijar fuente para el editor
 set encoding=utf-8 "charset del doc por defecto
+set autoindent  "tabulación automática
+set relativenumber "Enumera las demás lineas con respecto a la actual.
