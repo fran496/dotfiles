@@ -16,9 +16,16 @@ set lazyredraw " Re-dibuja la pantalla sólo cuando sea necesario
 set showmatch " Resalta el interior de un bloque de código
 set incsearch " Permite buscar a medida que se insertan caracteres en la busqueda
 set hlsearch " Resalta las coincidencias encontradas tras una busqueda
-set guioptions -=T "Esconder la barra de herramientas
-set guioptions -=m "Esconder barra de menú
-set guifont=DejaVu_Sans_Mono:h12 " Fijar fuente para el editor
 set encoding=utf-8 "charset del doc por defecto
 set autoindent  "tabulación automática
 set relativenumber "Enumera las demás lineas con respecto a la actual.
+set termguicolors "Activar los colores para el terminal
+if has("gui_running") " Si el usuario está usando la GUI, fijar esta config
+  set guioptions-=T "Esconder la barra de herramientas
+  set guioptions-=m "Esconder barra de menú
+  if has("gui_win32") " Si el usuario está usando OS Windows 
+    set guifont=Lucida_Console:h12 " Fijar fuente de la GUI segun el formato de windows
+  else
+    set guifont=Ubuntu\ Mono\ Regular\ 12 " Fijar cuente de la GUI segun el formato de UNIX
+  endif
+endif

@@ -1,0 +1,7 @@
+# Ignorar todo
+*
+
+# Excepto...
+!.gitignore
+!.vimrc
+!README.md
