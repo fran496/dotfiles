@@ -2,7 +2,7 @@ set backupdir=~/vimtmp,. " Fija directorio vimtmp (o el de trabajo) como el dire
 set directory=~/vimtmp,. " Fija directorio vimtmp (o el de trabajo) como el directorio en el que se almacenaran los archivos de extension swp (llamados archivos de intercambio, contiene información del historial de cambios que se han hecho en el archivo).
 set writebackup " Activa la creción de archivos de respaldo y swap
 syntax on " Activa el procesamiento de sintaxis
-color base16-default-dark "Esquema de colores del editor
+color base16-outrun-dark "Esquema de colores del editor
 set tabstop=2 " Determina el número de espacios visibles por tabulación (cuando VIM lee un archivo con tabulaciones).
 set shiftwidth=2 " Número de espacios incluidos al hacer enter
 set softtabstop=2 " Determina el número de espacios insertados al tabular durante la edición.
