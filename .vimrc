@@ -1,5 +1,4 @@
 " Vundle
-set nocompatible              " required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -22,9 +21,12 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Mi configuración estandar
-set backupdir=~/vimtmp,. " Fija directorio vimtmp (o el de trabajo) como el directorio en el que se almacenaran los archivos de extensión ~ (llamados archivos de respaldo, contienen el archivo que se edito en VIM en el estado en el que se encontraba antes de la edición).
-set directory=~/vimtmp,. " Fija directorio vimtmp (o el de trabajo) como el directorio en el que se almacenaran los archivos de extension swp (llamados archivos de intercambio, contiene información del historial de cambios que se han hecho en el archivo).
-set writebackup " Activa la creción de archivos de respaldo y swap
+set nocompatible " Evitar que vim sea compatible con vi y de esta forma, activar todas las mejoras de vim. Esta config es necesaria para Vundle.
+set path+=** " Permitir la busqueda de archivos en subdirectorios del directorio de trabajo
+set backupdir=~/vimtmp/backup,. " Fija directorio backup de vimtmp (o el de trabajo) como el directorio en el que se almacenaran los archivos de extensión ~ (llamados archivos de respaldo, contienen el archivo que se edito en VIM en el estado en el que se encontraba antes de la edición).
+set directory=~/vimtmp/swap,. " Fija directorio swap de vimtmp (o el de trabajo) como el directorio en el que se almacenaran los archivos de extension swp (llamados archivos de intercambio, contiene información del historial de cambios que se han hecho en el archivo).
+set writebackup " Al editar un archivo, crea un archivo de respaldo mientras se edita pero la borra al escribir 
+set backup " Activa la creación de archivos de respaldo
 syntax on " Activa el procesamiento de sintaxis
 color base16-outrun-dark "Esquema de colores del editor
 set tabstop=2 " Determina el número de espacios visibles por tabulación (cuando VIM lee un archivo con tabulaciones).
@@ -53,3 +55,9 @@ if has("gui_running") " Si el usuario está usando la GUI, fijar esta config
     set guifont=Ubuntu\ Mono\ Regular\ 12 " Fijar cuente de la GUI segun el formato de UNIX
   endif
 endif
+
+" Atajos para navegar más eficazmente entre pantallas divididas
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
