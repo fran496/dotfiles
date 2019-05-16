@@ -28,7 +28,7 @@ set directory=~/vimtmp/swap,. " Fija directorio swap de vimtmp (o el de trabajo)
 set writebackup " Al editar un archivo, crea un archivo de respaldo mientras se edita pero la borra al escribir 
 set backup " Activa la creación de archivos de respaldo
 syntax on " Activa el procesamiento de sintaxis
-color base16-outrun-dark "Esquema de colores del editor
+color base16-summerfruit-dark "Esquema de colores del editor
 set tabstop=2 " Determina el número de espacios visibles por tabulación (cuando VIM lee un archivo con tabulaciones).
 set shiftwidth=2 " Número de espacios incluidos al hacer enter
 set softtabstop=2 " Determina el número de espacios insertados al tabular durante la edición.
@@ -46,14 +46,19 @@ set encoding=utf-8 "charset del doc por defecto
 set autoindent  "tabulación automática
 set relativenumber "Enumera las demás lineas con respecto a la actual.
 set termguicolors "Activar los colores para el terminal
-if has("gui_running") " Si el usuario está usando la GUI, fijar esta config
+
+if has("gui_running") " Si el usuario está usando la GUI, fijar esta config...
   set guioptions-=T "Esconder la barra de herramientas
   set guioptions-=m "Esconder barra de menú
-  if has("gui_win32") " Si el usuario está usando OS Windows 
+  if has("gui_win32") " Si el usuario está usando OS Windows...
     set guifont=Lucida_Console:h12 " Fijar fuente de la GUI segun el formato de windows
-  else
+  else " Si no...
     set guifont=Ubuntu\ Mono\ Regular\ 12 " Fijar cuente de la GUI segun el formato de UNIX
   endif
+endif
+
+if $TERM == "xterm-256color" " Si el emulador de terminal soporta 256 colores...
+  set t_Co=256 " Fijar los colores de vim en el terminal a 256
 endif
 
 " Atajos para navegar más eficazmente entre pantallas divididas
