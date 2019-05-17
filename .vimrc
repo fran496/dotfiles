@@ -34,6 +34,7 @@ syntax on " Activa el procesamiento de sintaxis
 color base16-default-dark " Fija el esquema de colores del editor
 set background=dark " Fija el fondo del colorscheme a oscuro (Si es necesario)
 set termguicolors "Activar los colores para el terminal
+set colorcolumn=80 " Crea una linea vertical en la columna número 80
 
 set expandtab " Convierte tabulacion en espacios
 set tabstop=2 " Determina el número de espacios visibles por tabulación (cuando VIM lee un archivo con tabulaciones).
