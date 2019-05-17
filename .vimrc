@@ -34,7 +34,7 @@ syntax on " Activa el procesamiento de sintaxis
 color base16-default-dark " Fija el esquema de colores del editor
 set background=dark " Fija el fondo del colorscheme a oscuro (Si es necesario)
 set termguicolors "Activar los colores para el terminal
-set colorcolumn=80 " Crea una linea vertical en la columna número 80
+set colorcolumn=81 " Crea una linea vertical en la columna número 81
 
 set expandtab " Convierte tabulacion en espacios
 set tabstop=2 " Determina el número de espacios visibles por tabulación (cuando VIM lee un archivo con tabulaciones).
@@ -48,6 +48,8 @@ set number " Muestra el número de la línea al lado izquierdo del buffer
 set cursorline " Sombrea la linea activa
 set lazyredraw " Re-dibuja la pantalla sólo cuando sea necesario
 set relativenumber "Enumera las demás lineas con respecto a la actual.
+set listchars=tab:>-,trail:-,nbsp:_ " Determina cuales son los chars que marcan tabulaciones y trailing spaces
+set list " Marca tabulaciones y trailing space con simbolos 
 
 set showmatch " Resalta el interior de un bloque de código
 set incsearch " Permite buscar a medida que se insertan caracteres en la busqueda
