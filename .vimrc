@@ -3,10 +3,7 @@ execute pathogen#infect()
 
 " MI CONFIGURACIÓN
 set nocompatible " Vi IMproved activado!
-filetype off " Desactivar la detección del tipo de archivo.
-" Cargar el plugin correspondiente la tipo de archivo y...
-filetype plugin indent on " ...activa la detección de tipo de archivos
-
+filetype plugin indent on " Activar detección de archivos por plugin
 set encoding=utf-8 "charset del doc por defecto
 set path+=** " Busqueda de archivos en subdirectorios del directorio de trabajo
 
