@@ -1,28 +1,22 @@
-" Vundle
+" Administrador de paquetes Vundle
+set nocompatible              " be IMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" add all your plugins here (note older versions of Vundle
-" used Bundle instead of Plugin)
-
+" more Plugin commands
 " ...
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Mi configuración estandar
 set encoding=utf-8 "charset del doc por defecto
-set nocompatible " Evitar que vim sea compatible con vi y de esta forma, activar todas las mejoras de vim. Esta config es necesaria para Vundle.
 set path+=** " Permitir la busqueda de archivos en subdirectorios del directorio de trabajo
 
 set backupdir=~/vimtmp/backup,. " Fija directorio backup de vimtmp (o el de trabajo) como el directorio en el que se almacenaran los archivos de extensión ~ (llamados archivos de respaldo, contienen el archivo que se edito en VIM en el estado en el que se encontraba antes de la edición).
@@ -41,7 +35,6 @@ set tabstop=2 " Determina el número de espacios visibles por tabulación (cuando 
 set shiftwidth=2 " Número de espacios incluidos al hacer enter
 set softtabstop=2 " Determina el número de espacios insertados al tabular durante la edición.
 set autoindent  "tabulación automática
-filetype indent on " Activa la detección de tipos de archivos (Script de JS, Python, R...) y carga los archivos de tabulación correspondientes con el lenguaje.
 
 set showcmd " Muestra el ultimo comando realizado
 set number " Muestra el número de la línea al lado izquierdo del buffer
