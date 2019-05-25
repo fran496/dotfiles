@@ -13,7 +13,7 @@ set backupdir=~/vimtmp/backup,. " Fija el directorio donde se almaceran los ~
 set directory=~/vimtmp/swap,. " Fija el directorio donde se almacenaran los swap
 
 syntax on " Activa el procesamiento de sintaxis
-color base16-default-dark " Fija el esquema de colores del editor
+color kuroi " Fija el esquema de colores del editor
 set background=dark " Fija el fondo del colorscheme a oscuro (Si es necesario)
 set termguicolors "Activar los colores para el terminal
 set colorcolumn=81 " Crea una linea vertical en la columna número 81
