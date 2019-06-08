@@ -40,8 +40,9 @@ set wildmenu " Activa la autocompletación de nombres de archivos en un menu.
 if has("gui_running") " Si el usuario está usando la GUI, fijar esta config...
   set guioptions-=T "Esconder la barra de herramientas
   set guioptions-=m "Esconder barra de menú
+  set guioptions-=r "Esconder barra de scroll derecha
   if has("gui_win32") " Si el usuario está usando OS Windows...
-    set guifont=Lucida_Console:h12 " Fuente para Windows
+    set guifont=Lucida_Console:h11 " Fuente para Windows
   else " Si no...
     set guifont=Ubuntu\ Mono\ Regular\ 12 " Fuente para UNIX
   endif
