@@ -26,6 +26,7 @@ set autoindent  "tabulación automática
 
 set showcmd " Muestra el ultimo comando realizado
 set number " Muestra el número de la línea al lado izquierdo del buffer
+set showmatch " Sombrea el ([{ correspondiente al seleccionado
 set cursorline " Sombrea la linea activa
 set lazyredraw " Re-dibuja la pantalla sólo cuando sea necesario
 set relativenumber " Enumera las demás lineas con respecto a la actual.
