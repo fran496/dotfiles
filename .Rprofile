@@ -11,19 +11,18 @@ options(
   continue = "... "
 )
 
-update.packages(ask = FALSE) # Actualizar al comienzo
-
 .First <- function() { # Se ejecuta al comienzo de la sesion
   cat("\n¡Bienvenido a R!\n")
-  if (interactive()) try(fortunes::fortune(), silent = TRUE) # Galleta de la fortuna
+  try(print(fortunes::fortune()), silent = TRUE) # Galleta de la fortuna
 }
 
 .Last <- function() { # Se ejecuta al final de la sesion
-  condicion <- surpressWarnings(!require(fortunes, quietly = TRUE))
-  
+  condicion <- suppressWarnings(!require(fortunes, quietly = TRUE))
+
   if (condicion) try(install.packages("fortunes"), silent = TRUE)
+
   cat("\n¡Nos vemos!\n")
 }
 
-message("¡Se ha cargado R.profile!")
+message("Se ha cargado .Rprofile correctamente")
 
