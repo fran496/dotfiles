@@ -1,8 +1,8 @@
 # my-vimrc
 ***
-Made this repository to version control my VIM configuration file.
+Made this repository to version control my configuration files.
 
-## Color Scheme i'm using
+## Color Scheme i'm using (VIM)
 ***
 Currently I'm using kuroi
 
