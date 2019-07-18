@@ -10,7 +10,7 @@ set writebackup " Borrar respaldo luego de escribir el archivo
 set backupdir=./.backup,.,/tmp " Dir para archivos de respaldo
 set directory=.,./.backup,/tmp " Otro dir para archivos de respaldo
 
-color kuroi " Fija el esquema de colores del editor
+color tokyo-metro " Fija el esquema de colores del editor
 set termguicolors "Activar los colores para el terminal
 set colorcolumn=81 " Crea una linea vertical en la columna número 81
 
