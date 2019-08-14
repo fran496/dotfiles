@@ -1,12 +1,10 @@
-# my-config-files
-***
-Made this repository to version control my configuration files.
+# nvim-config
+I use this repository to version control my nvim config files.
 
-## Color Scheme i'm using (VIM)
-***
-Currently I'm using kuroi
+## CURRENT COLORSCHEME
+**tokyo-metro**
 
-## My favourite color schemes for vim
+## FAVOURITE COLORSCHEMES 
 
 * ~~base16-default-dark~~
 * ~~kuroi~~

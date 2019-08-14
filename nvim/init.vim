@@ -7,8 +7,8 @@ set path+=** " Busqueda de archivos en subdirectorios del directorio de trabajo
 
 set backup " Activa la creación de archivos de respaldo
 set writebackup " Borrar respaldo luego de escribir el archivo
-set backupdir=./.backup,.,/tmp " Dir para archivos de respaldo
-set directory=.,./.backup,/tmp " Otro dir para archivos de respaldo
+set backupdir=~/vimtmp/backup,~/ " Dir para archivos backup
+set directory=~/vimtmp/swp,~/ " Dir para archivos swp 
 
 color tokyo-metro " Fija el esquema de colores del editor
 set termguicolors "Activar los colores para el terminal
