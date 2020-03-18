@@ -30,13 +30,3 @@ By default, your nvim folder should only have two directories:
 
 Those are the only directories that are being ignored. If
 you have more directories, add them to .gitignore.
-
-## CURRENT COLORSCHEME
-**tokyo-metro**
-
-## FAVOURITE COLORSCHEMES 
-
-* ~~base16-default-dark~~
-* ~~kuroi~~
-* **tokyo-metro**
-* zenburn
