@@ -10,9 +10,10 @@ set writebackup " Borrar respaldo luego de escribir el archivo
 set backupdir=~/vimtmp/backup,~/ " Dir para archivos backup
 set directory=~/vimtmp/swp,~/ " Dir para archivos swp 
 
-color tokyo-metro " Fija el esquema de colores del editor
+color ayu " Fija el esquema de colores del editor
 set termguicolors "Activar los colores para el terminal
 set colorcolumn=81 " Crea una linea vertical en la columna numero 81
+let ayucolor="mirage"
 
 set expandtab " Convierte tabulacion en espacios
 set tabstop=2 " Determina el numero de espacios visibles por tabulacion
