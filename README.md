@@ -1,8 +1,11 @@
 # nvim-config
 I use this repository to version control my nvim config files.
 
-I come from vim so maybe my config file turning on options that 
-are already on because nvim has a pretty good default configuration.
+# TO-DO
+
+- [x] Use Vim-plug to transform Nvim into an IDE for Python
+- [ ] Figure out which options my script is turning on that are already set on by default
+- [ ] Learn more about Vimscript to improve my config file
 
 ## USING MY CONFIG FILE
 Feel free to fork this repo and use my configuration, i'd be glad
