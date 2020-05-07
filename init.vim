@@ -14,6 +14,7 @@ Plug 'neomake/neomake'  " verificar codigo
 " pip install pylint
 Plug 'machakann/vim-highlightedyank'  " resaltar area copiada
 Plug 'tmhedberg/SimpylFold'  " recoger secciones de codigo
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fuzzy finder
 call plug#end()  " :PluginInstall para instalarlos todos.
 
 " Configuración para plugins
@@ -49,10 +50,8 @@ noremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 filetype plugin indent on " Activar deteccion de archivos por plugin
 set path+=** " Busqueda de archivos en subdirectorios del directorio de trabajo
 
-set backup " Activa la creacion de archivos de respaldo
-set writebackup " Borrar respaldo luego de escribir el archivo
 set backupdir=~/vimtmp/backup,~/ " Dir para archivos backup
-set directory=~/vimtmp/swp,~/ " Dir para archivos swp 
+set directory=~/vimtmp/swp,~/ " Dir para archivos swp
 
 color base16-default-dark " Fija el esquema de colores del editor
 set termguicolors "Activar los colores para el terminal
@@ -64,14 +63,13 @@ set shiftwidth=2 " Numero de espacios incluidos al hacer enter
 set softtabstop=2 " Determina el numero de espacios insertados al tabular
 
 set number " Muestra el numero de la linea al lado izquierdo del buffer
+set list " Marca tabulaciones y trailing space con simbolos
+set listchars=tab:>-,trail:-,nbsp:_ " Los chars que marcan tabs, ts y nbsp
 set cursorline " Sombrea la linea activa
 set lazyredraw " Re-dibuja la pantalla solo cuando sea necesario
 set relativenumber " Enumera las demas lineas con respecto a la actual.
-set list " Marca tabulaciones y trailing space con simbolos
-set listchars=tab:>-,trail:-,nbsp:_ " Los chars que marcan tabs, ts y nbsp
 
 set showmatch " Resalta el interior de un bloque de codigo
-set incsearch " Dynamic searching
 
 if has('gui_running') " Si el usuario esta usando la GUI, fijar esta config...
   set guioptions-=T "Esconder la barra de herramientas
@@ -88,4 +86,3 @@ endif
 if $TERM == 'xterm-256color' " Si el emulador de terminal soporta 256 colores...
   set t_Co=256 " Fijar los colores de vim en el terminal a 256
 endif
-
