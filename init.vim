@@ -4,7 +4,6 @@ Plug 'davidhalter/jedi-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }  " Autocompletación
 Plug 'zchee/deoplete-jedi'  " Autocompletación para python
 " pip install jedi pynvim
-Plug 'vim-airline/vim-airline'  " Barra de estado
 Plug 'jiangmiao/auto-pairs'  " Completación de {[(\"...
 Plug 'scrooloose/nerdcommenter'  " Comentar codigo
 Plug 'scrooloose/nerdtree'  " Arbol de directorios
@@ -15,6 +14,7 @@ Plug 'neomake/neomake'  " verificar codigo
 Plug 'machakann/vim-highlightedyank'  " resaltar area copiada
 Plug 'tmhedberg/SimpylFold'  " recoger secciones de codigo
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fuzzy finder
+Plug 'ryanoasis/vim-devicons'  " iconos bonitos
 call plug#end()  " :PluginInstall para instalarlos todos.
 
 " Configuración para plugins
@@ -47,7 +47,7 @@ nnoremap <C-H> <C-W><C-H>
 noremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Configuración
-filetype plugin indent on " Activar deteccion de archivos por plugin
+filetype plugin on
 set path+=** " Busqueda de archivos en subdirectorios del directorio de trabajo
 
 set backupdir=~/vimtmp/backup,~/ " Dir para archivos backup
@@ -86,3 +86,7 @@ endif
 if $TERM == 'xterm-256color' " Si el emulador de terminal soporta 256 colores...
   set t_Co=256 " Fijar los colores de vim en el terminal a 256
 endif
+
+" Barra de estado
+set laststatus=2
+set statusline=%m\ %F\ %y\ %{&fileencoding?&fileencoding:&encoding}\ %=%(C:%c\ L:%l\ %P%)
