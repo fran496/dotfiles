@@ -79,7 +79,7 @@ if has('gui_running') " Si el usuario esta usando la GUI, fijar esta config...
     set guifont=Lucida_Console:h11 " Fuente para Windows
     let $XDG_CONFIG_HOME=$HOME " Make sure you cloned nvim-config
   else
-    set guifont=Ubuntu\ Mono\ Regular\ 12 " Fuente para UNIX
+    set guifont=Hack-Regular 12 " Fuente para UNIX
   endif
 endif
 
