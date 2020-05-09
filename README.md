@@ -5,7 +5,6 @@ I use this repository to version control my nvim config files.
 
 - [x] Use Vim-plug to transform Nvim into an IDE for Python
 - [ ] Figure out which options my script is turning on that are already set on by default
-- [ ] Customize my own statusline
 - [ ] Create a bash file which contains all the code I need to run to install dependencies of my script (From Vim-plug to even the Hack fonts)
 - [ ] Learn more about Vimscript to improve my config file
 

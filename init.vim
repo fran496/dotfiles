@@ -14,7 +14,7 @@ Plug 'neomake/neomake'  " verificar codigo
 Plug 'machakann/vim-highlightedyank'  " resaltar area copiada
 Plug 'tmhedberg/SimpylFold'  " recoger secciones de codigo
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fuzzy finder
-Plug 'ryanoasis/vim-devicons'  " iconos bonitos
+Plug 'itchyny/lightline.vim'  " barra de estado
 call plug#end()  " :PluginInstall para instalarlos todos.
 
 " Configuración para plugins
@@ -79,14 +79,10 @@ if has('gui_running') " Si el usuario esta usando la GUI, fijar esta config...
     set guifont=Lucida_Console:h11 " Fuente para Windows
     let $XDG_CONFIG_HOME=$HOME " Make sure you cloned nvim-config
   else
-    set guifont=Hack-Regular 12 " Fuente para UNIX
+    set guifont=Hack\ Regular\ 11 " Fuente para UNIX
   endif
 endif
 
 if $TERM == 'xterm-256color' " Si el emulador de terminal soporta 256 colores...
   set t_Co=256 " Fijar los colores de vim en el terminal a 256
 endif
-
-" Barra de estado
-set laststatus=2
-set statusline=%m\ %F\ %y\ %{&fileencoding?&fileencoding:&encoding}\ %=%(C:%c\ L:%l\ %P%)
