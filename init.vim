@@ -15,6 +15,7 @@ Plug 'machakann/vim-highlightedyank'  " resaltar area copiada
 Plug 'tmhedberg/SimpylFold'  " recoger secciones de codigo
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fuzzy finder
 Plug 'itchyny/lightline.vim'  " barra de estado
+Plug 'itchyny/landscape.vim'  " tema
 call plug#end()  " :PluginInstall para instalarlos todos.
 
 " Configuración para plugins
@@ -53,7 +54,7 @@ set path+=** " Busqueda de archivos en subdirectorios del directorio de trabajo
 set backupdir=~/vimtmp/backup,~/ " Dir para archivos backup
 set directory=~/vimtmp/swp,~/ " Dir para archivos swp
 
-color base16-default-dark " Fija el esquema de colores del editor
+color landscape " Fija el esquema de colores del editor
 set termguicolors "Activar los colores para el terminal
 set colorcolumn=81 " Crea una linea vertical en la columna numero 81
 
