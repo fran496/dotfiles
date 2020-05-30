@@ -3,10 +3,7 @@ I use this repository to version control my nvim config files.
 
 # TO-DO
 
-- [x] Use Vim-plug to transform Nvim into an IDE for Python
-- [ ] Figure out which options my script is turning on that are already set on by default
-- [ ] Create a bash file which contains all the code I need to run to install dependencies of my script (From Vim-plug to even the Hack fonts)
-- [ ] Learn more about Vimscript to improve my config file
+- [ ] Create a Makefile for this
 
 ## USING MY CONFIG FILE
 Feel free to fork this repo and use my configuration, i'd be glad
