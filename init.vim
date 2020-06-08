@@ -12,16 +12,22 @@ Plug 'sbdchd/neoformat'  "auto formato
 Plug 'neomake/neomake'  " verificar codigo
 " pip install pylint
 Plug 'machakann/vim-highlightedyank'  " resaltar area copiada
-Plug 'tmhedberg/SimpylFold'  " recoger secciones de codigo
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fuzzy finder
+Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'  " barra de estado
-Plug 'itchyny/landscape.vim'  " tema
-call plug#end()  " :PluginInstall para instalarlos todos.
+Plug 'cocopon/iceberg.vim'  "Tema
+Plug 'sheerun/vim-polyglot'  " Paquete de lenguajes
+Plug 'christoomey/vim-tmux-navigator'  " Navegar entre Tmux y Vim
+call plug#end()  " :PlugInstall para instalarlos todos.
 
 " Configuración para plugins
 let g:neomake_python_enabled_makers = ['pylint']
-
 let g:deoplete#enable_at_startup = 1
+
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'iceberg',
+      \ }
 
 " disable autocompletion, cause we use deoplete for completion
 let g:jedi#completions_enabled = 0
@@ -54,9 +60,9 @@ set path+=** " Busqueda de archivos en subdirectorios del directorio de trabajo
 set backupdir=~/vimtmp/backup,~/ " Dir para archivos backup
 set directory=~/vimtmp/swp,~/ " Dir para archivos swp
 
-color landscape " Fija el esquema de colores del editor
 set termguicolors "Activar los colores para el terminal
-set colorcolumn=81 " Crea una linea vertical en la columna numero 81
+color iceberg " Fija el esquema de colores del editor
+set colorcolumn=80 " Crea una linea vertical en la columna numero 81
 
 set expandtab " Convierte tabulacion en espacios
 set tabstop=2 " Determina el numero de espacios visibles por tabulacion
@@ -82,8 +88,4 @@ if has('gui_running') " Si el usuario esta usando la GUI, fijar esta config...
   else
     set guifont=Hack\ Regular\ 11 " Fuente para UNIX
   endif
-endif
-
-if $TERM == 'xterm-256color' " Si el emulador de terminal soporta 256 colores...
-  set t_Co=256 " Fijar los colores de vim en el terminal a 256
 endif
