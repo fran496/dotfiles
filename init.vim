@@ -50,11 +50,18 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Para fzf
+nnoremap <leader>fi :Files<CR>
+" Para NERDTree
+nnoremap <C-n> :NERDTreeToggle<CR>
 " Para ...
 noremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Configuración
 filetype plugin on
+
+let mapleader="\<Space>"  " Tecla lider
+
 set path+=** " Busqueda de archivos en subdirectorios del directorio de trabajo
 
 set backupdir=~/vimtmp/backup,~/ " Dir para archivos backup
