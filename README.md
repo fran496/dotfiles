@@ -3,7 +3,9 @@ I use this repository to version control my nvim config files.
 
 # TO-DO
 
-- [ ] Create a Makefile for this
+- [ ] Make better instructions for installing a init.vim file
+- [ ] Fix the problem with font setting on OS Windows
+
 
 ## USING MY CONFIG FILE
 Feel free to fork this repo and use my configuration, i'd be glad

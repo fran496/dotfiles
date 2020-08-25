@@ -1,16 +1,9 @@
 " Plugins
 call plug#begin()  " (Requiere Vim-plug)
-Plug 'davidhalter/jedi-vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }  " Autocompletación
-Plug 'zchee/deoplete-jedi'  " Autocompletación para python
-" pip install jedi pynvim
 Plug 'jiangmiao/auto-pairs'  " Completación de {[(\"...
 Plug 'scrooloose/nerdcommenter'  " Comentar codigo
 Plug 'scrooloose/nerdtree'  " Arbol de directorios
 Plug 'sbdchd/neoformat'  "auto formato
-" pip install yapf
-Plug 'neomake/neomake'  " verificar codigo
-" pip install pylint
 Plug 'machakann/vim-highlightedyank'  " resaltar area copiada
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fuzzy finder
 Plug 'junegunn/fzf.vim'
@@ -21,18 +14,10 @@ Plug 'christoomey/vim-tmux-navigator'  " Navegar entre Tmux y Vim
 call plug#end()  " :PlugInstall para instalarlos todos.
 
 " Configuración para plugins
-let g:neomake_python_enabled_makers = ['pylint']
-let g:deoplete#enable_at_startup = 1
-
 " Lightline
 let g:lightline = {
       \ 'colorscheme': 'iceberg',
       \ }
-
-" disable autocompletion, cause we use deoplete for completion
-let g:jedi#completions_enabled = 0
-" open the go-to function in split, not another buffer
-let g:jedi#use_splits_not_buffers = "right"
 
 " Enable alignment
 let g:neoformat_basic_format_align = 1
@@ -90,9 +75,9 @@ if has('gui_running') " Si el usuario esta usando la GUI, fijar esta config...
   set guioptions-=m "Esconder barra de menu
   set guioptions-=r "Esconder scroll bar derecha
   if has('win32') " Si el usuario esta usando OS Windows...
-    set guifont=Lucida_Console:h11 " Fuente para Windows
-    let $XDG_CONFIG_HOME=$HOME " Make sure you cloned nvim-config
+    " Crea la siguiente ruta: ~\AppData\Local\nvim\init.vim
+    set guifont=Fira\ Code " Fuente para Windows
   else
-    set guifont=Hack\ Regular\ 11 " Fuente para UNIX
+    set guifont=Fira_Code " Fuente para UNIX
   endif
 endif
