@@ -1,35 +1,9 @@
 # nvim-config
-I use this repository to version control my nvim config files.
+I use this repository to version control my nvim config file. My plugin manager is Vim Plug.
 
-# TO-DO
+# How to install this configuration file?
+## Windows
+The init.vim file should go inside the directory locate at: ~/AppData/Local/nvim. If the directory does not exist, create it, and put the init.vim file inside.
 
-- [ ] Make better instructions for installing a init.vim file
-- [ ] Fix the problem with font setting on OS Windows
-
-
-## USING MY CONFIG FILE
-Feel free to fork this repo and use my configuration, i'd be glad
-if you could give me tips to improve it.
-
-Fork this repo and then go to $HOME/nvim and execute the following commands:
-
-1. git init
-2. git remote add origin https://github.com/**username**/nvim-config
-3. git pull origin master
-
-### WHY NOT *GIT CLONE*?
-Because doing it this way its more comfortable. Since $XDG\_CONFIG\_HOME=$HOME,
-the config files for nvim need to be within **nvim**. Using this approach you
-clone only the contents of the repo directly into the *nvim directory*.
-If you use *git clone* then you will have to extract the contents of **nvim\_config**
-into its parent directory (nvim).
-
-
-## EXTRA DIRECTORIES
-By default, your nvim folder should only have two directories:
-
-* bin
-* share
-
-Those are the only directories that are being ignored. If
-you have more directories, add them to .gitignore.
+## Linux
+The init.vim file should go inside the directory located at: ~/.config/nvim.
