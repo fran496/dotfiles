@@ -29,23 +29,33 @@ let g:neoformat_basic_format_trim = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Remapeo de comandos
+" Para apagar el resaltado de busqueda
+nnoremap <silent> <esc> <cmd>nohl<cr>
+
 " Para navegar entre pantallas divididas
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Para fzf
-nnoremap <leader>fi :Files<CR>
-" Para NERDTree
+" Para plugins
+nnoremap <silent> <leader><space> :Files<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
-" Para ...
 noremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+
+" Crear directorio para archivos de respaldo si es necesario
+if !isdirectory($HOME . "/vimtmp")
+  call mkdir($HOME . "/vimtmp/backup", "p")
+  call mkdir($HOME . "/vimtmp/swp", "p")
+endif
+
 
 " Configuración
 filetype plugin on
 
-let mapleader="\<Space>"  " Tecla lider
+" Para fijar al tecla lider como espacio
+let mapleader="<space>"
 
 set path+=** " Busqueda de archivos en subdirectorios del directorio de trabajo
 
