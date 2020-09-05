@@ -3,46 +3,49 @@ call plug#begin()  " (Requiere Vim-plug)
 Plug 'jiangmiao/auto-pairs'  " Completación de {[(\"...
 Plug 'scrooloose/nerdcommenter'  " Comentar codigo
 Plug 'scrooloose/nerdtree'  " Arbol de directorios
-Plug 'sbdchd/neoformat'  "auto formato
 Plug 'machakann/vim-highlightedyank'  " resaltar area copiada
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fuzzy finder
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'  " barra de estado
-Plug 'cocopon/iceberg.vim'  "Tema
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' } " tema
 Plug 'sheerun/vim-polyglot'  " Paquete de lenguajes
 Plug 'christoomey/vim-tmux-navigator'  " Navegar entre Tmux y Vim
 call plug#end()  " :PlugInstall para instalarlos todos.
 
 " Configuración para plugins
-" Lightline
+"" Lightline
 let g:lightline = {
-      \ 'colorscheme': 'iceberg',
+      \ 'colorscheme': 'challenger_deep',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'absolutepath', 'modified' ] ]
+      \ }
       \ }
 
-" Enable alignment
-let g:neoformat_basic_format_align = 1
-" Enable tab to spaces conversion
-let g:neoformat_basic_format_retab = 1
-" Enable trimmming of trailing whitespace
-let g:neoformat_basic_format_trim = 1
+" Mapeos
+" Para fijar al tecla lider como espacio
+let mapleader="<space>"
 
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" Remapeo de comandos
-" Para apagar el resaltado de busqueda
+"" Para apagar el resaltado de busqueda
 nnoremap <silent> <esc> <cmd>nohl<cr>
 
-" Para navegar entre pantallas divididas
+"" Para navegar entre pantallas divididas
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Para plugins
+"" Para plugins
 nnoremap <silent> <leader><space> :Files<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
-noremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+" Configuración
+filetype plugin on
+
+set path+=** " Busqueda de archivos en subdirectorios del directorio de trabajo
+
+set backupdir=~/vimtmp/backup,~/ " Dir para archivos backup
+set directory=~/vimtmp/swp,~/ " Dir para archivos swp
 
 " Crear directorio para archivos de respaldo si es necesario
 if !isdirectory($HOME . "/vimtmp")
@@ -50,20 +53,12 @@ if !isdirectory($HOME . "/vimtmp")
   call mkdir($HOME . "/vimtmp/swp", "p")
 endif
 
+"Activar los colores para el terminal
+if has('nvim') || has('termguicolors')
+    set termguicolors
+endif
 
-" Configuración
-filetype plugin on
-
-" Para fijar al tecla lider como espacio
-let mapleader="<space>"
-
-set path+=** " Busqueda de archivos en subdirectorios del directorio de trabajo
-
-set backupdir=~/vimtmp/backup,~/ " Dir para archivos backup
-set directory=~/vimtmp/swp,~/ " Dir para archivos swp
-
-set termguicolors "Activar los colores para el terminal
-color iceberg " Fija el esquema de colores del editor
+color challenger_deep " Fija el esquema de colores del editor
 set colorcolumn=80 " Crea una linea vertical en la columna numero 81
 
 set expandtab " Convierte tabulacion en espacios
