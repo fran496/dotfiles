@@ -23,12 +23,16 @@ let g:lightline = {
       \ }
 
 " Mapeos
-"" Para fijar al tecla lider como espacio
-let mapleader="<space>"
-
+"" Fijar la tecla lider como espacio
+let g:mapleader="\<Space>"
+"" Abrir archivo de configuración
+nnoremap <leader>ev <cmd>vsplit $MYVIMRC<cr>
+"" Cargar cambios realizados en el archivo de configuración
+nnoremap <leader>sv <cmd>source $MYVIMRC<cr>
+"" Poner palabra insertada en letras mayusculas
+inoremap <C-K> <esc>viwUea
 "" Para apagar el resaltado de busqueda
 nnoremap <silent> <esc> <cmd>nohl<cr>
-
 "" Para navegar entre pantallas divididas
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
