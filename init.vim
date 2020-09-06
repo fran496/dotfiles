@@ -1,16 +1,16 @@
 " Plugins
-call plug#begin()  " (Requiere Vim-plug)
-Plug 'jiangmiao/auto-pairs'  " Completación de {[(\"...
+call plug#begin()
+Plug 'jiangmiao/auto-pairs'  " Autocompletación de paréntesis, comillas...
 Plug 'scrooloose/nerdcommenter'  " Atajos para comentar codigo
 Plug 'scrooloose/nerdtree'  " Arbol de directorios
 Plug 'machakann/vim-highlightedyank'  " Resaltar caracteres copiados
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " Buscador de archivos
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'  " Barra de estado ligera
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' } " Colorscheme
 Plug 'sheerun/vim-polyglot'  " Paquete de sintaxis de lenguajes
 Plug 'christoomey/vim-tmux-navigator'  " Navegar entre Tmux y Vim
-call plug#end()  " :PlugInstall para instalarlos todos.
+call plug#end()
 
 " Configuración para plugins
 "" Lightline
@@ -38,17 +38,14 @@ nnoremap <C-H> <C-W><C-H>
 "" Para plugins
 """ Fzf
 nnoremap <silent> <leader><space> :Files<CR>
-
 """ NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
-
-" Configuración
+" Configuración general
 filetype plugin on
 
-set path+=** " Busqueda de archivos en subdirectorios del directorio de trabajo
-
-set backupdir=~/vimtmp/backup,~/ " Dir para archivos backup
-set directory=~/vimtmp/swp,~/ " Dir para archivos swp
+set path+=** " Buscar incluso en subdirectorios del directorio de trabajo
+set backupdir=~/vimtmp/backup,~/ " Definir directorio para archivos backup
+set directory=~/vimtmp/swp,~/ " Definir directorio para archivos swap
 
 "" Crear directorio para archivos de respaldo si es necesario
 if !isdirectory($HOME . "/vimtmp")
@@ -56,25 +53,27 @@ if !isdirectory($HOME . "/vimtmp")
   call mkdir($HOME . "/vimtmp/swp", "p")
 endif
 
+set showmatch " Saltar al siguiente parentesis luego de insertarlo
+set expandtab " Convertir las tabulaciones en espacios
+set tabstop=2 " Fijar cuantos espacios son una tabulación en el archivo
+set softtabstop=2 " Fijar el numero de espacios insertados al tabular
+set shiftwidth=2 " Fijar el numero de espacios incluidos con la auto-sangría
+
 "" Activar los colores para el terminal
 if has('nvim') || has('termguicolors')
     set termguicolors
 endif
 
-color challenger_deep " Fija el esquema de colores del editor
-set colorcolumn=80 " Crea una linea vertical en la columna numero 81
+color challenger_deep " Definir el esquema de colores del editor
+set colorcolumn=80 " Crear una linea vertical en la columna numero 81
+set nowrap " Que las lineas NO se adapten visualmente al tamaño de la ventana
+set sidescroll=5  " Fija cuantos caracteres nos movemos al hacer scroll horizontal
+set listchars+=precedes:<,extends:>  " Indicar cuando se esta viendo la linea incompleta
+
 set noshowmode " No indicar modo ya que eso hace lightline
-
-set expandtab " Convierte tabulacion en espacios
-set tabstop=2 " Determina el numero de espacios visibles por tabulacion
-set shiftwidth=2 " Numero de espacios incluidos al hacer enter
-set softtabstop=2 " Determina el numero de espacios insertados al tabular
-
-set number " Muestra el numero de la linea al lado izquierdo del buffer
-set list " Marca tabulaciones y trailing space con simbolos
-
-set cursorline " Sombrea la linea activa
-set lazyredraw " Re-dibuja la pantalla solo cuando sea necesario
-set relativenumber " Enumera las demas lineas con respecto a la actual.
-
-set showmatch " Resalta el interior de un bloque de codigo
+set hlsearch " Resaltar busqueda de forma incremental
+set number " Mostrar el numero de la linea al lado izquierdo
+set list " Marcar tabulaciones y espacio sobrante con simbolos
+set relativenumber " Enumerar las demas lineas con respecto a la actual.
+set cursorline " Sombrear la linea activa
+set lazyredraw " Redibujar la pantalla solo cuando sea necesario
