@@ -1,0 +1,24 @@
+[user]
+	name = Francisco Rivas
+	email = franciscorivas496@gmail.com
+[color]
+  # Allow colors in color-supporting terminals
+	ui = auto
+[alias]
+	# Show a better log command
+	lg = log --format='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+[core]
+	editor = nvim-qt
+[diff]
+	mnemonicPrefix = true
+	renames = true
+	tool= nvim
+[merge]
+  # Avoid fast-forward merges
+	ff = false
+[status]
+	# Show untracked files of untracked directories
+	showUntrackedFiles = all
+
+#[http]
+#	proxy = http://user:pass@proxy:port

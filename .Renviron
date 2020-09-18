@@ -1,0 +1,4 @@
+# Este Script se usa para determinar variables del sistema/entorno.
+http_proxy = "http://user:password@proxy.domain.com:port/"  # Esta se lee primero
+https_proxy = "https://user:password@proxy.domain.com:port/"  # A veces solo es necesaria esta variable
+ftp_proxy = "user:password@proxy.domain.com:port"
