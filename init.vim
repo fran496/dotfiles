@@ -1,4 +1,4 @@
-" Plugins
+" Plugins {{{
 call plug#begin()
 Plug 'jiangmiao/auto-pairs'  " Autocompletación de paréntesis, comillas...
 Plug 'scrooloose/nerdcommenter'  " Atajos para comentar codigo
@@ -21,8 +21,9 @@ let g:lightline = {
       \             [ 'readonly', 'absolutepath', 'modified' ] ]
       \ }
       \ }
+" }}}
 
-" Mapeos
+" Mapeos {{{
 "" Fijar la tecla lider como espacio
 let g:mapleader="\<Space>"
 "" Abrir archivo de configuración
@@ -31,23 +32,35 @@ nnoremap <leader>ev <cmd>vsplit $MYVIMRC<cr>
 nnoremap <leader>sv <cmd>source $MYVIMRC<cr>
 "" Poner palabra insertada en letras mayusculas
 inoremap <C-K> <esc>viwUea
+"" Salir del modo de insertar
+inoremap jk <esc>
 "" Para apagar el resaltado de busqueda
-nnoremap <silent> <esc> <cmd>nohl<cr>
+nnoremap <silent> <esc> <cmd>nohlsearch<cr>
 "" Para navegar entre pantallas divididas
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"" Para plugins
+"" Para Plugins
 """ Fzf
 nnoremap <silent> <leader><space> :Files<CR>
 """ NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
-" Configuración general
+" }}}
+
+" Configuración general {{{
 filetype plugin on
 
-set path+=** " Buscar incluso en subdirectorios del directorio de trabajo
+" Tipo de folding para archivos vim
+augroup filetype_vim
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
+  autocmd FileType vim setlocal foldlevelstart=0
+augroup END
+
+
+set path=.,** " El path es el directorio de trabajo actual y todos los subdirectorios
 set backupdir=~/vimtmp/backup,~/ " Definir directorio para archivos backup
 set directory=~/vimtmp/swp,~/ " Definir directorio para archivos swap
 
@@ -57,6 +70,7 @@ if !isdirectory($HOME . "/vimtmp")
   call mkdir($HOME . "/vimtmp/swp", "p")
 endif
 
+set smartindent " Sangría inteligente
 set showmatch " Saltar al siguiente parentesis luego de insertarlo
 set expandtab " Convertir las tabulaciones en espacios
 set tabstop=2 " Fijar cuantos espacios son una tabulación en el archivo
@@ -75,9 +89,9 @@ set sidescroll=5  " Fija cuantos caracteres nos movemos al hacer scroll horizont
 set listchars+=precedes:<,extends:>  " Indicar cuando se esta viendo la linea incompleta
 
 set noshowmode " No indicar modo ya que eso hace lightline
-set hlsearch " Resaltar busqueda de forma incremental
 set number " Mostrar el numero de la linea al lado izquierdo
 set list " Marcar tabulaciones y espacio sobrante con simbolos
 set relativenumber " Enumerar las demas lineas con respecto a la actual.
 set cursorline " Sombrear la linea activa
 set lazyredraw " Redibujar la pantalla solo cuando sea necesario
+" }}}

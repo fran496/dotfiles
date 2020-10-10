@@ -15,7 +15,7 @@
 	tool= nvim
 [merge]
   # Avoid fast-forward merges
-	ff = false
+	# ff = false
 [status]
 	# Show untracked files of untracked directories
 	showUntrackedFiles = all
