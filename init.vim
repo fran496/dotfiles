@@ -1,19 +1,16 @@
 " Plugins {{{
 call plug#begin()
 Plug 'jiangmiao/auto-pairs'  " Autocompletación de paréntesis, comillas...
-Plug 'scrooloose/nerdcommenter'  " Atajos para comentar codigo
-Plug 'scrooloose/nerdtree'  " Arbol de directorios
 Plug 'machakann/vim-highlightedyank'  " Resaltar caracteres copiados
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }  " Buscador de archivos
-Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'  " Barra de estado ligera
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' } " Colorscheme
 Plug 'sheerun/vim-polyglot'  " Paquete de sintaxis de lenguajes
 Plug 'christoomey/vim-tmux-navigator'  " Navegar entre Tmux y Vim
 call plug#end()
+"}}}
 
-" Configuración para plugins
-"" Lightline
+" Configuración de plugins {{{
+"" lightline
 let g:lightline = {
       \ 'colorscheme': 'challenger_deep',
       \ 'active': {
@@ -21,7 +18,13 @@ let g:lightline = {
       \             [ 'readonly', 'absolutepath', 'modified' ] ]
       \ }
       \ }
-" }}}
+
+"" netrw
+let g:netrw_banner = 0 " Eliminar el encabezado de ayuda
+let g:netrw_browse_split = 4 " Abrir archivo seleccionado en buffer vertical
+let g:netrw_altv = 1
+let g:netrw_winsize = 25 " Que el buffer del explorador solo tome un 25% de la ventana
+"}}}
 
 " Mapeos {{{
 "" Fijar la tecla lider como espacio
@@ -30,26 +33,32 @@ let g:mapleader="\<Space>"
 nnoremap <leader>ev <cmd>vsplit $MYVIMRC<cr>
 "" Cargar cambios realizados en el archivo de configuración
 nnoremap <leader>sv <cmd>source $MYVIMRC<cr>
-"" Poner palabra insertada en letras mayusculas
-inoremap <C-K> <esc>viwUea
-"" Salir del modo de insertar
-inoremap jk <esc>
 "" Para apagar el resaltado de busqueda
 nnoremap <silent> <esc> <cmd>nohlsearch<cr>
 "" Para navegar entre pantallas divididas
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-"" Para Plugins
-""" Fzf
-nnoremap <silent> <leader><space> :Files<CR>
-""" NERDTree
-nnoremap <C-n> :NERDTreeToggle<CR>
-" }}}
+nnoremap <A-j> <C-w><C-j>
+nnoremap <A-k> <C-w><C-k>
+nnoremap <A-l> <C-w><C-l>
+nnoremap <A-h> <C-w><C-h>
+inoremap <A-h> <C-\><C-n><C-w>h
+inoremap <A-j> <C-\><C-n><C-w>j
+inoremap <A-k> <C-\><C-n><C-w>k
+inoremap <A-l> <C-\><C-n><C-w>l
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+"" Para facilitar el autocompletado
+inoremap <C-f> <C-x><C-f>
+inoremap <C-l> <C-x><C-l>
+"" Abrir explorador de archivos netrw
+nnoremap <leader>n :Vexplore<CR>
+"" Abrir emulador de terminal
+nnoremap <leader>t :split term://bash<CR>
+"}}}
 
 " Configuración general {{{
+
 filetype plugin on
 
 " Tipo de folding para archivos vim
@@ -59,16 +68,15 @@ augroup filetype_vim
   autocmd FileType vim setlocal foldlevelstart=0
 augroup END
 
-
-set path=.,** " El path es el directorio de trabajo actual y todos los subdirectorios
-set backupdir=~/vimtmp/backup,~/ " Definir directorio para archivos backup
-set directory=~/vimtmp/swp,~/ " Definir directorio para archivos swap
-
 "" Crear directorio para archivos de respaldo si es necesario
 if !isdirectory($HOME . "/vimtmp")
   call mkdir($HOME . "/vimtmp/backup", "p")
   call mkdir($HOME . "/vimtmp/swp", "p")
 endif
+
+set path=.,** " El path es el directorio de trabajo actual y todos los subdirectorios
+set backupdir=~/vimtmp/backup,~/ " Definir directorio para archivos backup
+set directory=~/vimtmp/swp,~/ " Definir directorio para archivos swap
 
 set smartindent " Sangría inteligente
 set showmatch " Saltar al siguiente parentesis luego de insertarlo
@@ -90,8 +98,8 @@ set listchars+=precedes:<,extends:>  " Indicar cuando se esta viendo la linea in
 
 set noshowmode " No indicar modo ya que eso hace lightline
 set number " Mostrar el numero de la linea al lado izquierdo
+set relativenumber " Enumerar las demas lineas con respecto a la actual
 set list " Marcar tabulaciones y espacio sobrante con simbolos
-set relativenumber " Enumerar las demas lineas con respecto a la actual.
 set cursorline " Sombrear la linea activa
 set lazyredraw " Redibujar la pantalla solo cuando sea necesario
 " }}}
