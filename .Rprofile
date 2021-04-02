@@ -5,14 +5,8 @@ options(internet.info = 0,
 	prompt = "R> ",
 	continue = "... ")
 
-.First <- function() { # Se ejecuta al comienzo de la sesion
-  try(print(fortunes::fortune()), silent = TRUE)  # Galleta de la fortuna
+.First <- function() { # Se ejecuta al inicio de la sesion
 }
 
 .Last <- function() { # Se ejecuta al final de la sesion
-  condicion <- suppressWarnings(!require(fortunes, quietly = TRUE))
-
-  if (condicion) try(install.packages("fortunes"), silent = TRUE)
 }
-
-message("Todo listo.")
