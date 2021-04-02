@@ -21,8 +21,8 @@ let g:lightline = {
 
 "" netrw
 let g:netrw_banner = 0 " Eliminar el encabezado de ayuda
-let g:netrw_browse_split = 4 " Abrir archivo seleccionado en buffer vertical
-let g:netrw_altv = 1
+let g:netrw_browse_split = 4 " Abrir archivo en ventana anterior
+let g:netrw_altv = 1 " Abrir los split siempre a la derecha
 let g:netrw_winsize = 25 " Que el buffer del explorador solo tome un 25% de la ventana
 "}}}
 
@@ -48,7 +48,7 @@ tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
 tnoremap <A-k> <C-\><C-n><C-w>k
 tnoremap <A-l> <C-\><C-n><C-w>l
-"" Para facilitar el autocompletado
+"" Para facilitar el autocompletado de nombres de archivos y lineas
 inoremap <C-f> <C-x><C-f>
 inoremap <C-l> <C-x><C-l>
 "" Abrir explorador de archivos netrw
